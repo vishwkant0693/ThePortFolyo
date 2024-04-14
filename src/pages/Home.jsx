@@ -12,6 +12,7 @@ import Contact from '../components/Contact';
 function Home() {
     const params = useParams();
     const navigate = useNavigate();
+    
     const userId = '65b3a22c01d900e96c4219ae'; //John doe
 
     const BASE_URL = 'https://portfolio-backend-30mp.onrender.com/api/v1';
@@ -43,43 +44,8 @@ function Home() {
     }, [params?.user, userId, navigate]);
     console.log(user);
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        setIsSending(true);
 
-        const formData = Object.fromEntries(new FormData(e.target).entries());
-        const body = {
-            ...formData,
-            toEmail: 'ayushbhardwaj5718@gmail.com',
-            toName: user?.about?.name,
-        };
-
-        try {
-            const response = await fetch(`${BASE_URL2}/temp/user-email/contact`, {
-                method: 'POST',
-                body: JSON.stringify(body), // You may need to adjust the serialization based on your server's expectations
-                headers: {
-                    'Content-Type': 'application/json', // Set the appropriate content type
-                },
-            });
-
-            if (response.ok) {
-                alert('Message sent successfully!');
-                e.target.reset();
-                // Handle success, such as showing a success message to the user
-            } else {
-                alert('Something went wrong!');
-                console.error('Error sending message:', response.statusText);
-                // Handle error, such as displaying an error message to the user
-            }
-        } catch (error) {
-            console.error('Error sending message:', error.message);
-            // Handle error, such as displaying an error message to the user
-        } finally {
-            setIsSending(false);
-        }
-    };
-
+// filtering all the data from the API
     const sortedFilteredSkills = user?.skills?.filter((item) => item.enabled)?.sort((a, b) => a.sequence - b.sequence);
     const sortedFilteredProject = user?.projects?.filter((item) => item.enabled)?.sort((a, b) => a.sequence - b.sequence);
     const filteredServices = user?.services?.filter((item) => item.enabled);
