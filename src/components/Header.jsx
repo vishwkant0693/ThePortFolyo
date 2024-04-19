@@ -8,7 +8,7 @@ function Header() {
       <header className="fixed w-full px-[20px] md:px-[40px] z-30 h-[80px] flex items-center text-gray-400 bg-gray-950">
         <div className="flex md:flex-row md:items-center w-full justify-between">
           <Link className="title-font font-semibold text-gray-600" to={'/'}>
-            <span className="ml-3 text-2xl">Vishwkant</span>
+            <span className="ml-3 text-2xl">John Dee</span>
           </Link>
           <nav className="hidden lg:flex gap-x-4 font-semibold">
             <Link className="mr-5 hover:text-gray-700" to={"/"}>Home</Link>
