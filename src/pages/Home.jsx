@@ -63,7 +63,7 @@ function Home() {
         <>
             <AnimatePresence initial={true} mode='wait' >
                 <Routes key={location.pathname} location={location}>
-                    <Route path="/" element={<Hero />} />
+                    <Route path="/" element={<Hero data={user} />} />
                     <Route path="/about" element={<About data={user} />} />
                     <Route path="/skills" element={<Skills data={sortedFilteredSkills} />} />
                     <Route path="/projects" element={<Projects data={sortedFilteredProject} />} />

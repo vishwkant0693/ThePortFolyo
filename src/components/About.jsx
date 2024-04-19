@@ -13,7 +13,7 @@ function About({ data }) {
       <motion.section initial={{ opacity:0}} animate={{opacity:1}} exit={{opacity:0}} transition={transition1}  className="text-gray-400 bg-gray-900 body-font pt-10">
         <div className="container mx-auto flex flex-col lg:flex-row py-32">
           <motion.div initial={{ opacity:0, y:'-50%'}} animate={{opacity:1,y:0}} exit={{opacity:0,y:'-50%'}} transition={transition1} onMouseEnter={mouseEnter} onMouseLeave={mouseExit} className="p-6 overflow-hidden object-center" style={{ height: "550px" }} >
-            <img src={data.about.avatar.url} alt={name} />
+            <img src={data.about.avatar.url} alt={data.about.name} />
           </motion.div>
           <motion.div initial={{ opacity:0, x:'50%'}} animate={{opacity:1,x:0}} exit={{opacity:0,x:'50%'}} transition={transition1} onMouseEnter={mouseEnter} onMouseLeave={mouseExit} className="text-xl flex flex-col justify-center lg:px-4 max-lg:p-10">
             <h1 className='text-5xl mb-3'>About Me</h1>

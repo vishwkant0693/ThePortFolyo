@@ -10,7 +10,7 @@ function formatDate(dateString) {
 
 function Timeline({ data }) {
   const {mouseEnter, mouseExit } = useContext(CursorContext);
-  const [showEducation, setShowEducation] = useState(false);
+  const [showEducation, setShowEducation] = useState(true);
 
   const filteredJobData = showEducation
     ? data.timeline.filter(job => job.forEducation)
